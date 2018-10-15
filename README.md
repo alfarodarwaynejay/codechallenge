@@ -1,3 +1,15 @@
+## DESCRIPTION FOR THIS PROJECT
+
+This app was coded for a given challenge given to the author.
+Objective is to create a simple app that fetch a JSON Array and display its response in an organized way.
+
+Specification:
+1. use html, css, and javascript
+2. create a sorting mechanism to the front-end.
+
+
+## HERE BEGINS THE INFO FROM THE TOOLS I USED -- create-react-app
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
