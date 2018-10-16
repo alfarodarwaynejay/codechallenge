@@ -1,7 +1,7 @@
 import React from 'react';
 import Post from './Post.js';
 
-const PostList = ({post, username}) => {
+const PostList = ({post, users}) => {
 
 	return (
 		<div>	
@@ -20,8 +20,8 @@ const PostList = ({post, username}) => {
 			     )
 
 				: post.map((userpost,i) => {
-					let realName = username.filter(user => user.userId === userpost.userId );
-
+					let name = users[userpost.userId-1]
+					
 					return (
 						<Post 
 							key={i}
@@ -29,7 +29,7 @@ const PostList = ({post, username}) => {
 				            message={userpost.body}
 				            postId={userpost.id}
 				            userId={userpost.userId}
-				            userName={realName[0].name} 
+				            userName={name} 
 				        />
 					);
 				})

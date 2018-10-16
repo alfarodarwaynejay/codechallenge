@@ -37,7 +37,7 @@ class App extends Component {
       .then(response => response.json())
       .then(user => {
         const filteredUserAPI = user.map(person => {
-          return { userId: person.id, name: person.name };
+          return person.name;
         })
         this.setState({users: filteredUserAPI})
       })
@@ -72,6 +72,8 @@ class App extends Component {
           return b.id - a.id;
         })
         break;
+      default:
+
     }
 
     this.setState({order: event.target.value});
@@ -80,16 +82,15 @@ class App extends Component {
   render() {
     const { users, posts, searchfield } = this.state;
     const filterUser = posts.filter( post => {
+      let searchName = !users[post.userId - 1] ? '' : users[post.userId - 1].toLowerCase();
+
       return (
           !searchfield ? true : 
             (
               //triggered when search input user ID
               post.userId === Number(searchfield) ||
               //triggered when search input user name
-              (users.filter(user => {
-               return (user.userId === post.userId) 
-                 && user.name.toLowerCase().includes(searchfield.toLowerCase())
-              })).length > 0
+              searchName.includes(searchfield.toLowerCase())
 
             )
           );
@@ -140,7 +141,7 @@ class App extends Component {
           <hr />
           </div>
           <Scroll >
-            <PostList post={filterUser} username={users}/>
+            <PostList post={filterUser} users={users}/>
           </Scroll>
 
 
@@ -151,5 +152,4 @@ class App extends Component {
 }
 
 export default App;
-
 
