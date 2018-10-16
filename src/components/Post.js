@@ -16,13 +16,13 @@ const Post = ({title, message, userName, userId, postId}) => {
 	}
 
 	return (
-		<div className='db br3 ma2 pa3 grow bw2 shadow-5 flex w-450 justify-around'>
-			<div className='w-25 pa3 mr2'>
-			<img alt='robotUser' src={`https://robohash.org/${userId}?100x100`} />
-			<h1 className={`${!(userId === 1 || userId === 2) ? 'username-long':'username' }`}>{userName}</h1>
-			<h3 className='userIDS'>User Id: {userId}</h3>
+		<div className='dib br3 ma2 pa3 grow bw2 tc w-70'>
+			<div className='w-75 pa3 mr2 tc db' style={{margin: '5px auto'}}>
+				<img alt='robotUser' src={`https://robohash.org/${userId}?100x100`} style={{margin: '5px auto'}}/>
+				<h1 className='username' style={{margin: 'auto'}}>{userName}</h1>
+				<h3 className='userIDS' style={{margin: 'auto'}}>User Id: {userId}</h3>
 			</div>
-			<div className='bg-lightest-blue  w-150 mr2 br4 o-70'>
+			<div className='bg-lightest-blue  w-150 mr2 br4 o-70  shadow-5'>
 				<div>
 					<h2 className='pa4 title-header'>{title}</h2>
 					<h5 className='userIDS'>Post Id: {postId}</h5>

@@ -67,15 +67,14 @@ h1, .app-banner {
 	font-size: 1.7rem;
 }
 
-.userIDS, .searchSpan, .username {
+.userIDS, .searchSpan {
 	font-family: 'Robofan Free';
 	font-size: 1.5rem;
 }
 
-.username-long {
+.username {
 	font-family: 'Robofan Free';
-	font-size: 1rem;
-	letter-spacing: 1px;
+	font-size: 3rem;
 }
 
 

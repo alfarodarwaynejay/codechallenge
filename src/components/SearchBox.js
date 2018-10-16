@@ -2,7 +2,7 @@ import React from 'react';
 
 const SearchBox = ({onOrderChange, onSearchChange, result}) => {
 	return (
-		<div>
+		<div className='justify-center'>
 			<input 
 				className='pa3 ma2 ba b--green bg-lightest-blue'
 				type='search'
@@ -17,7 +17,7 @@ const SearchBox = ({onOrderChange, onSearchChange, result}) => {
 				<option value='ascending'>Ascending</option>
 				<option value='descending'>Descending</option>
 			</select>
-			<span className='searchSpan'>Results: {result} </span>
+			<span className='searchSpan flex flex-wrap justify-center'>Results: {result} </span>
 		</div>
 	);
 }
