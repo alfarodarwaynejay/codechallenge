@@ -66,13 +66,11 @@ class App extends Component {
         posts.sort((a,b) => {
           return a.id - b.id;
         })
-
         break;
       case 'descending':
         posts.sort((a,b) => {
           return b.id - a.id;
         })
-
         break;
     }
 
@@ -85,29 +83,36 @@ class App extends Component {
       return (
           !searchfield ? true : 
             (
-              post.userId === Number(searchfield)  
+              //triggered when search input user ID
+              post.userId === Number(searchfield) ||
+              //triggered when search input user name
+              (users.filter(user => {
+               return (user.userId === post.userId) 
+                 && user.name.toLowerCase().includes(searchfield.toLowerCase())
+              })).length > 0
 
             )
           );
     });
 
     return !posts.length && !users.length ?
-
       (
         <div className="App tc">
 
           <Particles className='particles'
                 params={particleOptions}
           />
-
-          <h1>Coding Challenge</h1>
-          <h2>Simple API Processing</h2>
-          <SearchBox 
-            onSearchChange={this.onSearchChange} 
-            onOrderChange={this.onOrderChange}
-          />
-          <hr />
-          <Scroll>
+          <div >
+            <h1>Coding Challenge</h1>
+            <h2>Simple API Processing</h2>
+            <SearchBox 
+              onSearchChange={this.onSearchChange} 
+              onOrderChange={this.onOrderChange}
+              result={filterUser.length}
+            />
+            <hr />
+          </div>
+          <Scroll >
             <h1>LOADING. . .</h1>
           </Scroll>
 
@@ -124,15 +129,17 @@ class App extends Component {
           <Particles className='particles'
                 params={particleOptions}
           />
-
+          <div>
           <h1>Coding Challenge</h1>
           <h2 className='app-banner'>Simple API Processing</h2>
           <SearchBox 
             onSearchChange={this.onSearchChange} 
             onOrderChange={this.onOrderChange}
+            result={filterUser.length}
           />
           <hr />
-          <Scroll>
+          </div>
+          <Scroll >
             <PostList post={filterUser} username={users}/>
           </Scroll>
 

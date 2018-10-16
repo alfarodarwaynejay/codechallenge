@@ -4,13 +4,7 @@ import Post from './Post.js';
 const PostList = ({post, username}) => {
 
 	return (
-
-		
-
-		<div>
-
-
-			
+		<div>	
           	{
           		!post.length ?
 
@@ -41,7 +35,6 @@ const PostList = ({post, username}) => {
 				})
 			} 		
 		</div>
-
 	);
 }
 
