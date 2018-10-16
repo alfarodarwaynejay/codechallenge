@@ -8,9 +8,24 @@ const PostList = ({post, username}) => {
 		
 
 		<div>
+
+
 			
           	{
-				post.map((userpost,i) => {
+          		!post.length ?
+
+          		(
+					<Post 
+						key={'no-user'}
+			            title={'NO USER FOUND'}
+			            message={'This is only a sample app. Users range from nubers 1-10 only. Thank you!'}
+			            postId={'***************'}
+			            userId={'XXXXXXX'}
+			            userName={'ADMIN'} 
+			        />
+			     )
+
+				: post.map((userpost,i) => {
 					let realName = username.filter(user => user.userId === userpost.userId );
 
 					return (
@@ -24,8 +39,7 @@ const PostList = ({post, username}) => {
 				        />
 					);
 				})
-			}
-
+			} 		
 		</div>
 
 	);

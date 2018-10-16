@@ -80,9 +80,15 @@ class App extends Component {
   }
 
   render() {
-    const { users, posts, searchfield, order } = this.state;
+    const { users, posts, searchfield } = this.state;
     const filterUser = posts.filter( post => {
-      return (!searchfield ? true : post.userId === Number(searchfield));
+      return (
+          !searchfield ? true : 
+            (
+              post.userId === Number(searchfield)  
+
+            )
+          );
     });
 
     return !posts.length && !users.length ?
