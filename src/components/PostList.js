@@ -13,8 +13,8 @@ const PostList = ({post, users}) => {
 						key={'no-user'}
 			            title={'NO USER FOUND'}
 			            message={'This is only a sample app. Users range from numbers 1-10 only. Thank you!'}
-			            postId={'***************'}
-			            userId={'XXXXXXX'}
+			            postId={'0'}
+			            userId={'0'}
 			            userName={'ADMIN'} 
 			        />
 			     )
